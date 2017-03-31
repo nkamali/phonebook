@@ -1,3 +1,42 @@
-<h1>Welcome</h1>
+<div class="row">
+  <div class="col-md-12">
 
-<p>You have one hour to complete as many tasks as you can. You might not finish all of them and that's okay.</p>
+    <button type="button" id="new-user-button" class="btn btn-primary">Add Person via API</button>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>City</th>
+          <th>Email</th>
+          <th>Cell</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @everyone.each do |person| %>
+          <tr>
+            <td>
+              <%=person.first %>
+            </td>
+            <td>
+              <%=person.last %>
+            </td>
+            <td>
+              <%=person.city %>
+            </td>
+            <td>
+              <%=person.email %>
+            </td>
+            <td>
+              <%=person.cell %>
+            </td>
+            <td><i class="icon-remove-sign" id="<%= person.id %>"></i></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

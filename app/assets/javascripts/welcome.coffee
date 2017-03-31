@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $('#new-user-button').click ->
+    $.ajax
+      url: 'https://randomuser.me/api/'
+      dataType: 'json'
+      success: (data) ->
+        console.log data
+        return
+
